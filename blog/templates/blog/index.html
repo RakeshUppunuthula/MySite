@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block my_pageTitle %}My Blog{% endblock %}
+
+{% block cssfiles %}
+<link href="{% static 'blog/post.css' %}" rel="stylesheet"/>
+<link href="{% static 'blog/index.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+<section id="welcome">
+    <header>
+        <img src="{% static 'blog/images/IMAGE.jpg' %}" alt="Rakesh-author of this post"/>
+        
+            <h2>Rakesh's Blog</h2>
+
+    </header>
+            <p>Hi, this is Rakesh. I like to write blogs and share my experiences with the world in tech.</p>
+        
+  
+</section>
+<section id="latest-posts">
+    <h2>My Latest Thoughts</h2>
+    <ul>
+        {% for post in posts%}
+        {% include 'blog/includes/post.html' %}
+        {% endfor %}
+    </ul>
+</section>
+<section id="about">
+    <h2>What I Do</h2>
+    <p>I love programming and exploring new technologies.</p>
+    <p>Think and grow rich.</p>
+</section>
+{% endblock %}

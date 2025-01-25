@@ -1,0 +1,169 @@
+/* body {
+    background-color: #e7e7e7;
+}
+
+#main-navigation {
+    background-color: #390281;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+#summary {
+    margin: 8rem auto 3rem auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 90rem;
+    border-radius: 16px;
+    background-color: #5706c0;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    height: 22rem;
+}
+
+#summary h2 {
+    color: white;
+    font-size: 4.5rem;
+}
+
+#summary article {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-align: right;
+    color: white;
+}
+
+#summary article img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 12px;
+    transform: rotateZ(5deg);
+    border: 5px solid white;
+    margin-bottom: 1rem;
+}
+
+#summary address {
+    font-weight: bold;
+}
+#summary time {
+
+    font-weight:bold;
+}
+
+
+
+
+
+#about p {
+    font-size:3rem;
+}
+
+#about p{
+    font-size: 1.5rem;
+    color:#353535;
+
+} 
+
+ */
+ /* Base body styling */
+body {
+    background-color: #e7e7e7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Summary section adjustments */
+#summary {
+    margin: 8rem auto 3rem auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 90rem;
+    border-radius: 16px;
+    background-color: #5706c0;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    height: 22rem;
+}
+
+#summary h2 {
+    color: white;
+    font-size: 4.5rem;
+    margin-top: 0;
+    padding-top: 1rem;
+}
+
+#summary article {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-align: right;
+    color: white;
+}
+
+#summary article img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 12px;
+    transform: rotateZ(5deg);
+    border: 5px solid white;
+    margin-bottom: 1rem;
+}
+
+/* Main content styling - updated to match the screenshot */
+main {
+    width: 90%;
+    max-width: 90rem;
+    margin: 0 auto 3rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Paragraph styling within main */
+main p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #353535;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* Navigation styling */
+#main-navigation {
+    background-color: #390281;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #summary {
+        margin-top: 6rem;
+        height: auto;
+        padding-bottom: 3rem;
+    }
+
+    #summary h2 {
+        font-size: 3rem;
+    }
+
+    #summary article {
+        position: static;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    main {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
