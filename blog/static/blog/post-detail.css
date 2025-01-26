@@ -67,7 +67,7 @@
 
  */
  /* Base body styling */
-body {
+ body {
     background-color: #e7e7e7;
     margin: 0;
     padding: 0;
@@ -166,4 +166,33 @@ main p {
         width: 95%;
         padding: 1.5rem;
     }
+}
+
+/* .tag{
+    background-color:white;
+    color: #390281;
+    padding: 0.5rem,1rem;
+    border-radius: 4px;
+
+
+} */
+
+ 
+.tag {
+    background-color: white;
+    color: #390281;
+    padding: 0.5rem 1rem; /* Correctly applying padding (top-bottom and left-right) */
+    border-radius: 4px;
+    margin-right: 0.5rem; /* Adds space between tags */
+    display: inline-block; /* Ensures proper spacing when tags are inline */
+    font-weight: bold; /* Optional: makes the text stand out */
+    text-align: center; /* Ensures the text is centered inside the tag */
+}
+
+
+
+#summary a {
+
+    color: white;
+    text-decoration: none;
 }
