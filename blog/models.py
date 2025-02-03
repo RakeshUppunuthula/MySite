@@ -56,4 +56,3 @@ class Comment(models.Model):
 #         return self.userName()
 # 
     
- 

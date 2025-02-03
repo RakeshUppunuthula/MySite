@@ -36,6 +36,7 @@ h3 {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    margin-left: 0.5rem
 }
 
 #main-navigation a:hover,
@@ -46,4 +47,9 @@ h3 {
 #main-navigation h1 a:hover,
 #main-navigation h1 a:active {
     color: white;
+}
+
+#main-navigation nav {
+    display: inline-block;
+    margin-left: 15px; /* Adjust spacing as needed */
 }

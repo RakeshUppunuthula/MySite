@@ -332,3 +332,22 @@ main p {
     color: #464646;
 
 }
+#ReadLater {
+
+    margin:2rem 0;
+
+}
+#ReadLater button {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 0.5rem 2rem;
+    font: inherit;
+    color: white;
+    cursor: pointer;
+}
+#ReadLater button:hover,
+#ReadLater button:active{
+    background-color: white;
+    color:#390281
+
+}

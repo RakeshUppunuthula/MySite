@@ -55,15 +55,32 @@ class allPostListView(ListView):
 
 
 class post_detail(View):
+    def saved_for_later(self,request,post_id):
+        stored_posts=request.session.get("stored_posts")
+
+        if stored_posts is not None:
+            is_saved_for_later =post_id in stored_posts
+        else:
+                is_saved_for_later =False
+
+        return    is_saved_for_later      
+
   
 
     def get(self, request, slug):
+
+
         Post = post.objects.get(slug=slug)
+
+        
+
+       
         context = {
             "post": Post,
             "post_tags": Post.Tags.all(),
             "comment_form":CommentForm(),
-            "comments":Post.comments.all().order_by("-id")
+            "comments":Post.comments.all().order_by("-id"),
+            "saved_for_later":self.saved_for_later(request,Post.id)
         }
         return render(request, "blog/post-detail.html",context)
 
@@ -81,10 +98,43 @@ class post_detail(View):
             "post": Post,
             "post_tags": Post.Tags.all(),
             "comment_form":comment_form,
-            "comments":Post.comments.all().order_by("-id")
+            "comments":Post.comments.all().order_by("-id"),
+            "saved_for_later":self.saved_for_later(request,post.id)
         }
         return render(request, "blog/post-detail.html",context)
 
+class ReadLaterView(View):
+    def get(self,request):
+        stored_posts=request.session.get("stored_posts")
+        context ={}
+        if stored_posts is None or len(stored_posts)==0:
+            context["posts"]=[]
+            context["has_posts"] =False
+        else :
+            Posts =post.objects.filter(id__in=stored_posts)
+            context["posts"]=Posts
+            context["has_posts"] =True
+        return render(request,"blog/stored-posts.html",context)    
+  
+    def post(self,request):
+        stored_posts=request.session.get("stored_posts")
+
+        if stored_posts is None:
+            stored_posts=[]
+
+        post_id =int(request.POST['post_id'])
+
+
+        if post_id not in stored_posts:
+            stored_posts.append(post_id) 
+           
+        else:
+            stored_posts.remove(post_id)
+        request.session['stored_posts']=stored_posts
+        return HttpResponseRedirect("/")      
+             
+            
+         
 
 
       
